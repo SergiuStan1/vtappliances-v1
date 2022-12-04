@@ -10,6 +10,19 @@
     font-weight: 500 !important;
 }
 
+.bg-primary-orange {
+    background-color: #F5A623 !important;
+}
+
+.orange {
+    color: #FFA500;
+}
+
+.btn-primary-orange { 
+    background-color: #FFA500;
+    color: #fff;
+}
+
 .fw-bold {
     font-weight: 700 !important;
 }
