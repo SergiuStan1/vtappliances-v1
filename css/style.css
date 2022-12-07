@@ -577,3 +577,23 @@
     letter-spacing: 1px;
     box-shadow: none;
 }
+
+.bg-grey {
+    background: #F8F8F8;
+}
+
+.over-everything {
+    z-index: 9999;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn ease 1s;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+}
+
+.spinner-border {
+    color: #FFA500 !important;
+}
