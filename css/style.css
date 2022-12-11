@@ -597,3 +597,12 @@
 .spinner-border {
     color: #FFA500 !important;
 }
+
+.italic {
+    font-style: italic;
+    font-size: 2.5rem;
+}
+
+.text-to-right {
+    text-align: right;
+}
