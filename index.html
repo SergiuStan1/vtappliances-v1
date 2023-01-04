@@ -52,6 +52,7 @@
                 emailjs.sendForm('service_vtropjm', 'template_eqdgl0m', this)
                     .then(function() {
                         console.log('SUCCESS!');
+                        reset();
                     }, function(error) {
                         console.log('FAILED...', error);
                     });
