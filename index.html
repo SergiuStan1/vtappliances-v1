@@ -33,6 +33,31 @@
     
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('uX6JCPsosswtBlZ3u');
+        })();
+    </script>
+    <script type="text/javascript">
+        debugger;
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('service_vtropjm', 'template_eqdgl0m', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 </head>
 
 <body>
@@ -94,8 +119,8 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-12 col-lg-8 text-center">
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Professional Approach</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">Appliance Repair <br> RIGHT AT YOUR DOORSTEP.</p>
+                                <h1 class="display-3 text-white animated slideUp mb-4">Professional Approach</h1>
+                                <p class="fs-5 text-white mb-4 slideUp pb-2">Appliance Repair <br> RIGHT AT YOUR DOORSTEP.</p>
                             </div>
                         </div>
                     </div>
@@ -176,22 +201,22 @@
                     <div class="p-lg-5 pe-lg-0">
                         <div class="bg-primary-orange mb-3" style="width: 60px; height: 2px;"></div>
                         <h1 class="display-5 mb-5">Free Quote</h1>
-                        <form>
+                        <form id="contact-form">
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
+                                    <input type="text" class="form-control border-0" name="from_name" placeholder="Your Name" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
+                                    <input type="email" class="form-control border-0" name="email" placeholder="Your Email" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;">
+                                    <input type="text" class="form-control border-0" name="contact_number" placeholder="Your Mobile" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Make and Model Number" style="height: 55px;">
+                                    <input type="text" class="form-control border-0" name="make" placeholder="Make and Model Number" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control border-0" placeholder="Describe the problem that you are having"></textarea>
+                                    <textarea class="form-control border-0" name="message" placeholder="Describe the problem that you are having"></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button class="btn btn-primary-orange w-100 py-3" type="submit">Get A Free Quote</button>
