@@ -56,6 +56,13 @@
                     }, function(error) {
                         console.log('FAILED...', error);
                     });
+                emailjs.sendForm('service_vtropjm', 'template_eqdgl0m', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                        document.getElementById('contact-form').reset();
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
             });
         }
     </script>
